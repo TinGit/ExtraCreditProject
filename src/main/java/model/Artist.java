@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -34,7 +35,7 @@ public abstract class Artist {
 	@Lob
 	private Byte[] picture;
 	
-	
+	@ManyToMany(mappedBy="artists")
 	private List<Movie> movies = new ArrayList<Movie>();
 	
 }
